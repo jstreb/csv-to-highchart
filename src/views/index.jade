@@ -1,0 +1,28 @@
+extends layout
+
+append scripts
+  script(src="/javascripts/index.js")
+  script(type="text/javascript", src="/javascripts/vendors/upload/jquery.ui.widget.js")
+  script(type="text/javascript", src="/javascripts/vendors/upload/jquery.iframe-transport.js")
+  script(type="text/javascript", src="/javascripts/vendors/upload/jquery.fileupload.js")
+  script(type="text/javascript", src="/javascripts/vendors/highcharts.js")
+  script(type="text/javascript", src="/javascripts/vendors/exporting.js")
+
+block content
+  form( id='form', action="/csv-to-json")
+    h3 Title
+    input( id='title', name='title', type='text' )
+    
+    h3 Y axis
+    input( id='y', name='y', type='text' ) 
+    
+    h3 X axis
+    input( id='x', name='x', type='text' )
+    
+    input(type="file", id="fileupload", name="csv", data-url="/csv-to-json")
+    
+    .submit.btn.btn-primary Upload CSV file
+  
+  #container
+  
+  textarea.output Copy the generated code from here to Sitecore.

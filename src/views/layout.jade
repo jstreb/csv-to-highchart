@@ -1,0 +1,14 @@
+doctype 5
+html
+  head
+    title= title
+    block stylesheets
+      link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+      link(rel='stylesheet', href='/stylesheets/style.css')
+    block scripts
+      script(src='/javascripts/vendors/jquery.js')
+      script(src='/javascripts/vendors/bootstrap.js')
+  body
+    include ./includes/_header
+    .container
+      block content
